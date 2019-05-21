@@ -1,2 +1,0 @@
-username="fakeusername"
-password="fakepassword :)"
