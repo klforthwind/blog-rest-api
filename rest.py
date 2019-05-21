@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-from PSQL import getData
-import markdown2
+from WebHandler import getWebsite
 
 app = Flask(__name__)
 api = Api(app)
@@ -9,9 +8,8 @@ api = Api(app)
 class Blog(Resource):
 
     def get(self, name):
-        html = getData(name)
-        return html
-
+        return getWebsite(name)
+        
     #def post(self, name):
     #def put(self, name):
     #def delete(self, name):
