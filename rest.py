@@ -1,12 +1,28 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+import psycopg2
 
 app = Flask(__name__)
 api = Api(app)
 
+hostname = 'localhost'
+username = 'username'
+password = 'password'
+database = 'forthwind'
+
+def doQuery( conn ) :
+    cur = conn.cursor()
+    cur.execute( "SELECT * FROM website.test" )
+    for i,j in cur.fetchall():
+        print(i,j)
+
+
 class Blog(Resource):
 
     def get(self, name):
+        myConnection = psycopg2.connect( host=hostname, user=username, password=password, database=database )
+        doQuery( myConnection )
+        myConnection.close()
 
     #def post(self, name):
 
