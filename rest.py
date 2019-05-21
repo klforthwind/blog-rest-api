@@ -14,5 +14,6 @@ class Blog(Resource):
 
     def delete(self, name):
 
+api.add_resource(Blog, "/blog/<string:name>")
 
 app.run(debug=True)
