@@ -1,2 +1,2 @@
-username="fakeusername :)"
+username="fakeusername"
 password="fakepassword :)"
