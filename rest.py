@@ -16,4 +16,4 @@ class Blog(Resource):
 
 api.add_resource(Blog, "/blog/<string:name>")
 
-app.run(host='198.58.107.98', port=443, debug=True)
+app.run(host='198.58.107.98', port=6969, debug=True)
