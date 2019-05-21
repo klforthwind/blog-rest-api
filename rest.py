@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 import psycopg2
+import markdown2
 
 app = Flask(__name__)
 api = Api(app)
