@@ -23,6 +23,7 @@ class Blog(Resource):
         myConnection = psycopg2.connect( host=hostname, user=username, password=password, database=database )
         doQuery( myConnection )
         myConnection.close()
+        return "<html><p>This Works :)</p></html>"
 
     #def post(self, name):
 
