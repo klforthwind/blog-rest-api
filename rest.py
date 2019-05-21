@@ -8,11 +8,11 @@ class Blog(Resource):
 
     def get(self, name):
 
-    def post(self, name):
+    #def post(self, name):
 
-    def put(self, name):
+    #def put(self, name):
 
-    def delete(self, name):
+    #def delete(self, name):
 
 api.add_resource(Blog, "/blog/<string:name>")
 
