@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-from PSQL import issue_command
+from WebHandler import getHTML
 
 app = Flask(__name__)
 api = Api(app)
@@ -10,7 +10,7 @@ class Blog(Resource):
 
     #GET Request- Returns website in full html
     def get(self, name):
-        return issue_command('SELECT * FROM website.blog WHERE url=\'{}\''.format(name), True);
+        return getHTML(name)
         
     #def post(self, name):
     #def put(self, name):
