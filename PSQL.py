@@ -7,14 +7,21 @@ hostname = 'localhost'
 database = 'forthwind'
 
 def issue_command(command, get_data) :
+    # Get connection extablished
     conn = psycopg2.connect( host=hostname, user=username, password=password, database=database )
     cur = conn.cursor()
+
+    # Execute command
     cur.execute(command)
-    #cur.execute('SELECT * FROM website.blog')
-    conn.commit()    
-    if (get_data) :
-        data = cur.fetchall()
+    cur.execute('SELECT * FROM website.blog')
+
+    # Grab data from select or save repository if pushing
+    data = cur.fetchall() if (get_data) else conn.commit()
+
+    # Close connection after use
     conn.close()
+
+    # Return data if selecting data
     if (get_data) :
         return data
 
