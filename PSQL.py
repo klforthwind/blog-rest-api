@@ -25,7 +25,7 @@ def issue_command(command, get_data) :
         return data
 
 def pushData(url, title, tags, sources, text, timestamp) :
-    insert_string = 'INSERT INTO website.blog VALUES(\'{}\',\'{}\',\'{}\',\'{}\',\'{}\',\'{}\')'
+    insert_string = 'INSERT INTO website.blog VALUES(\'{}\',\'{}\',\'{}\',\'{}\',\'{}\')'
     t = '{\"' + '\",\"'.join(tags) + '\"}'
     s = '{\"' + '\",\"'.join(sources) + '\"}'
     issue_command(insert_string.format(url, title, t, s, text, timestamp), False)
