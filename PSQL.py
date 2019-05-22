@@ -13,7 +13,6 @@ def issue_command(command, get_data) :
 
     # Execute command
     cur.execute(command)
-    cur.execute('SELECT * FROM website.blog')
 
     # Grab data from select or save repository if pushing
     data = cur.fetchall() if (get_data) else conn.commit()
