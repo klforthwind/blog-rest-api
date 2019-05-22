@@ -29,7 +29,6 @@ link = input("Enter file name: ")
 content = get_file_data(link)
 
 html = markdown2.markdown(content)
-
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
