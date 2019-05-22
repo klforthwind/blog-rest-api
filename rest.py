@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from WebHandler import getHTML
+import re
 
 app = Flask(__name__)
 api = Api(app)
@@ -10,7 +11,11 @@ class Blog(Resource):
 
     #GET Request- Returns website in full html
     def get(self, name):
-        return getHTML(name)
+        # Hoping this stops SQL injection
+        if re.match("^[A-Za-z0-9_-]*$", name):
+            return getHTML(name)
+        else:
+            return "RAWR XD"
         
     #def post(self, name):
     #def put(self, name):
