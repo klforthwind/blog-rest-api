@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-from WebHandler import getHTML
+import markdown2
 import re
 
 app = Flask(__name__)
@@ -13,7 +13,17 @@ class Blog(Resource):
     def get(self, name):
         # Hoping this stops SQL injection
         if re.match("^[A-Za-z0-9_-]*$", name):
-            return getHTML(name)
+            #Get surrounding HTML
+            top = open("html/top.txt","r")
+            bottom = open("html/bottom.txt", "r")
+
+            #Get Post HTML
+            fileLoc = "posts/" + str(name) + ".md"
+            data = open(fileLoc, "r")
+            content = markdown2.markdown(data.read())
+
+            #Return the whole page in HTML
+            return str(top.read()) + content + str(bottom.read())
         else:
             return "RAWR XD"
         
