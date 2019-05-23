@@ -1,4 +1,4 @@
-from PSQL import issue_command
+
 
 def getHTML(url) :
 	top = open("top.txt","r")
