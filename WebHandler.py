@@ -1,9 +1,9 @@
-
+import markdown2
 
 def getHTML(url) :
 	top = open("top.txt","r")
 	bottom = open("bottom.txt", "r")
-	data = str(issue_command('SELECT html FROM website.blog WHERE url=\'{}\''.format(url), True)[0])
-	content = data[2:-3]
-	print(content)
+	fileLoc = str(url) + ".md"
+	data = open(fileLoc, "r")
+	content = markdown2.markdown(data.read())
 	return str(top.read()) + content + str(bottom.read())
