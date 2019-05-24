@@ -56,3 +56,20 @@ FileNotFoundError: [Errno 2] No such file or directory: 'posts/dragon.md'
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 924-138-081
+ * Serving Flask app "rest" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://198.58.107.98:4242/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 924-138-081
+173.8.111.114 - - [24/May/2019 15:14:29] "GET /blog/first-post HTTP/1.1" 200 -
+173.8.111.114 - - [24/May/2019 15:14:29] "GET /favicon.ico HTTP/1.1" 404 -
+ * Detected change in '/home/clients/blog-rest-api/rest.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "rest.py", line 10, in <module>
+    first-post
+NameError: name 'first' is not defined
