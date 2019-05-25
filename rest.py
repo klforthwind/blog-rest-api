@@ -30,7 +30,7 @@ class Blog(Resource):
                     #Return the whole page in HTML
                     return str(top.read()) + content + str(bottom.read()), 200, {'Access-Control-Allow-Origin': '*'}
 
-        return "RAWR XD", 404
+        return "RAWR XD", 404, {'Access-Control-Allow-Origin': '*'}
         
     #def post(self, name):
     #def put(self, name):
