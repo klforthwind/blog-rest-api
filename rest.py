@@ -52,4 +52,4 @@ api.add_resource(Blog, "/blog/<string:name>")
 # Access the api from 198.58.107.98:6969/blog/
 api.add_resource(BlogList, "/blog/")
 
-app.run(host='198.58.107.98', port=4242, debug=True)
+app.run(host='198.58.107.98', port=4242, debug=True, ssl_context=('/etc/letsencrypt/live/www.klforthwind.com/fullchain.pem', '/etc/letsencrypt/live/www.klforthwind.com/privkey.pem'))
