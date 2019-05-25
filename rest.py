@@ -18,17 +18,13 @@ class Blog(Resource):
         for post in posts :
             if (post==name) :
                 if re.match("^[A-Za-z0-9_-]*$", name):
-                    #Get surrounding HTML
-                    top = open("html/top.txt","r")
-                    bottom = open("html/bottom.txt", "r")
-
                     #Get Post HTML
                     fileLoc = "posts/" + str(name) + ".md"
                     data = open(fileLoc, "r")
                     content = markdown2.markdown(data.read())
 
                     #Return the whole page in HTML
-                    return str(top.read()) + content + str(bottom.read()), 200, {'Access-Control-Allow-Origin': '*'}
+                    return str(content), 200, {'Access-Control-Allow-Origin': '*'}
 
         return "RAWR XD", 404, {'Access-Control-Allow-Origin': '*'}
         
