@@ -28,7 +28,8 @@ class Blog(Resource):
                     content = markdown2.markdown(data.read())
 
                     #Return the whole page in HTML
-                    return str(top.read()) + content + str(bottom.read()), 200
+                    return str(top.read()) + content + str(bottom.read()), 200, {'Access-Control-Allow-Origin': '*'}
+
         return "RAWR XD", 404
         
     #def post(self, name):
