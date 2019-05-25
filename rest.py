@@ -42,10 +42,10 @@ class BlogList(Resource):
     def get(self):
         content = ""
         for post in posts:
-            content += "<p>"+""+post+"</p>"
+            content += post
 
             #Return the whole page in HTML
-            return content, 200
+            return content, 200, {'Access-Control-Allow-Origin': '*'}
 
 # Access the api from 198.58.107.98:6969/blog/url-name
 api.add_resource(Blog, "/blog/<string:name>")
