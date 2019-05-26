@@ -30,7 +30,7 @@ class Blog(Resource):
                     #Get Post HTML
                     fileLoc = "posts/" + str(name) + ".md"
                     data = open(fileLoc, "r")
-                    content = markdown2.markdown(data.read())
+                    content = "<a href=\"/blog/\"><--Back To Blog</a><br>"+markdown2.markdown(data.read())
 
                     #Return the whole page in HTML
                     return str(content), 200, {'Access-Control-Allow-Origin': '*'}
