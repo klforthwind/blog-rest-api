@@ -6,9 +6,18 @@ import re
 app = Flask(__name__)
 api = Api(app)
 
-posts = {
-    "first-post"
-}
+posts = [
+    {
+        "title": "Test Post",
+        "url": "test",
+        "date": "May 30th"
+    },
+    {
+        "title": "First Post",
+        "url": "first-post",
+        "date": "May 25th"
+    }
+]
 
 # Blog REST API
 class Blog(Resource):
@@ -16,7 +25,7 @@ class Blog(Resource):
     #GET Request- Returns website in full html
     def get(self, name):
         for post in posts :
-            if (post==name) :
+            if (post["url"]==name) :
                 if re.match("^[A-Za-z0-9_-]*$", name):
                     #Get Post HTML
                     fileLoc = "posts/" + str(name) + ".md"
@@ -38,10 +47,10 @@ class BlogList(Resource):
     def get(self):
         content = ""
         for post in posts:
-            content += post
+            content += post["title"] + post["url"] + post["date"]
 
-            #Return the whole page in HTML
-            return content, 200, {'Access-Control-Allow-Origin': '*'}
+        #Return the whole page in HTML
+        return content, 200, {'Access-Control-Allow-Origin': '*'}
 
 # Access the api from 198.58.107.98:6969/blog/url-name
 api.add_resource(Blog, "/blog/<string:name>")
