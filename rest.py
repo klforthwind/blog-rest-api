@@ -47,8 +47,7 @@ class BlogList(Resource):
     def get(self):
         content = ""
         for post in posts:
-            content += post["title"] + post["url"] + post["date"]
-
+            content += '<ul><a href=\"?page={}\">{}</a><aside>{}</aside></ul>'.format(post["url"], post["title"], post["date"])
         #Return the whole page in HTML
         return content, 200, {'Access-Control-Allow-Origin': '*'}
 
