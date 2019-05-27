@@ -19,7 +19,7 @@ class Blog(Resource):
                 fileLoc = "posts/" + str(name) + ".md"
                 data = open(fileLoc, "r")
                 backToHome = "<a href=\"/blog/\"><ul><--Back To Blog</ul></a><br>"
-                content = backToHome + markdown2.markdown(data.read())
+                content = backToHome + markdown2.markdown(data.read(), extras=["fenced-code-blocks"])
 
                 #Return the whole page in HTML
                 return str(content), 200, {'Access-Control-Allow-Origin': '*'}
