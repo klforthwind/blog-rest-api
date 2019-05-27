@@ -1,4 +1,4 @@
-#Setting Up An Apache2 Concrete5 Website With PHPMyAdmin
+#Apache2 Concrete5 Website Setup With phpMyAdmin
 # 05/26/2019
 
 1. SSH into server that will hold the website.
@@ -15,8 +15,8 @@
     1. Make sure apachectl configtest returns Syntax OK
     2. If it returns successfully, run apachectl restart
     3. If it does not return successfully, troubleshoot httpd.conf file
-7. Add User to PHPMy Admin User Base
-    1. Go to User Accounts in PHPMyAdmin
+7. Add User to phpMyAdmin User Base
+    1. Go to User Accounts in phpMyAdmin
     2. Add new user account
     3. Username: domainName dropping TLD
     4. Password: Randomly generated password
@@ -44,7 +44,7 @@ Chmod -R 777 ../www/
         2. Administrator Email: Probably Your Email :P
         3. Password: Another randomly generated password
         4. Database Location: localhost
-        5. Database domain, password, and database come from PHPMyAdmin
+        5. Database domain, password, and database come from phpMyAdmin
         6. Install
     2. Wait for Concrete5 to download everything that it needs
 11. Done!
