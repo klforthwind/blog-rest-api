@@ -18,7 +18,7 @@ class Blog(Resource):
                 #Get Post HTML
                 fileLoc = "posts/" + str(name) + ".md"
                 data = open(fileLoc, "r")
-                backToHome = "<a href=\"/blog/\"><--Back To Blog</a><br>"
+                backToHome = "<a href=\"/blog/\"><ul><--Back To Blog</ul></a><br>"
                 content = backToHome + markdown2.markdown(data.read())
 
                 #Return the whole page in HTML
@@ -36,7 +36,7 @@ class BlogList(Resource):
     def get(self):
         content = ""
         for post in posts:
-            content += '<ul><a href=\"?page={}\">{}</a><aside>{}</aside></ul>'.format(post["url"], post["title"], post["date"])
+            content += '<a href=\"?page={}\"><ul>{}<aside>{}</aside></ul></a>'.format(post["url"], post["title"], post["date"])
         #Return the whole page in HTML
         return content, 200, {'Access-Control-Allow-Origin': '*'}
 
