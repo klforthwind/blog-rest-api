@@ -1,7 +1,7 @@
-#Helpful POSTgresql Information
+#Helpful PostgreSQL Information
 ##05/28/2019
 
-- Log in to POSTgresql (psql always logs in to the database associated with the username, unless you add the -d option specifying database):
+- Log in to PostgreSQL (psql always logs in to the database associated with the username, unless you add the -d option specifying database):
 ```sh
 psql -U postgres -h localhost
 ```
@@ -97,3 +97,7 @@ pg_dump -U username -h localhost databaseName >> sqlfile.sql
 ```
 
 :)
+
+
+#####Sources:
+######[PostgreSQL Tutorial](http://www.postgresqltutorial.com/postgresql-python/ "Link to PostgreSQL Python")

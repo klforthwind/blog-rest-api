@@ -5,7 +5,7 @@ Before you read further, I would like you to know that I was very dumb when I de
 
 (When reading below, keep in mind, take everything with a grain of salt)
 
-To begin, I decided that I wanted to work on a blog, one that I could learn very useful skills that I could use in the future. In this blog, there was no need for many html files linked by a href tags, because that would be **too** simple. I came to the conclusion that I should have a POSTgresql database, since I could hold the data there instead of inside html files. The database would hold a url, title, tags, sources, text, and a date.
+To begin, I decided that I wanted to work on a blog, one that I could learn very useful skills that I could use in the future. In this blog, there was no need for many html files linked by a href tags, because that would be **too** simple. I came to the conclusion that I should have a PostgreSQL database, since I could hold the data there instead of inside html files. The database would hold a url, title, tags, sources, text, and a date.
 
 To interact with the database, I decided to run with a REST api written in python, which would serve data between website and database. I was very confident that the whole blog would use the REST api since the beginning, although it had to be tweaked since the database was not being used. The only problem is that I am using port 4242, which I cannot get my boss to unblock at my old high school. :P
 
@@ -24,3 +24,10 @@ Overall, I was really happy with it, although it took longer than I wish it woul
 (It was probably because I was very dumb)
 
 :)
+
+
+#####Sources:
+######[Python Markdown by trentm](https://github.com/trentm/python-markdown2 "Used for converting the markdown files")
+######[Running Flask Over HTTPS by Miguel Grindberg](https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https "Used to make CORS not hate me")
+######[Markdown Cheatsheet by adam-p](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Used for the markdown files")
+######[Pygment.css by richleland](https://github.com/richleland/pygments-css "Used to color code blocks")
