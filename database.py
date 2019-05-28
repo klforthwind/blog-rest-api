@@ -1,6 +1,6 @@
 posts = [
     {
-        "title": "Helpful POSTgresql Information",
+        "title": "Helpful PostgreSQL Information",
         "url": "postgresql-database",
         "date": "May 28th"
     },
