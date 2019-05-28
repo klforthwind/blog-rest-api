@@ -95,3 +95,5 @@ select * from schemaName.tableName;
 ```sh
 pg_dump -U username -h localhost databaseName >> sqlfile.sql 
 ```
+
+:)
