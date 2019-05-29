@@ -5,13 +5,13 @@
 
 Flask is known for being a small Python web framework, not having a database abstraction layer, form validation, or anything else that is already provided by another third-party library. 
 
-Setting up flask in a python rest api is pretty simple, since flask has a flask_restful api that makes HTTP requests really easy. To begin, we need to import flask and flask_restful into our python file:
+Setting up flask in a python rest api is pretty simple, since flask has a flask\_restful api that makes HTTP requests really easy. To begin, we need to import flask and flask\_restful into our python file:
 ```py
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 ```
-You will also need to install flask and flask_restful through the commandline:
-```sh
+You will also need to install flask and flask\_restful through the commandline:
+```py
 pip install flask
 pip install flask_restful
 ```
@@ -42,7 +42,7 @@ At the end of the python file, we want to add the following two lines:
 api.add_resource(User, "/user/<string:name>")
 app.run(host=IP_ADDRESS, port=5000, debug=True)
 ```
-The first line adds the User resource class to the flask_restful api such that it is reachable at /user/anyUserName, which the User Resource functions will use anyUserName as the name parameter in the functions, which will actually trigger the get function if it were to be accessed from a web browser. The second line runs the flask web framework on the ip address specified on the specific port. It is important to keep in mind that it cannot run on the same port as something already running. So it will not be able to run on 443 (SSL) if you already have an https server running. If debug is on, the rest api python file will adjust if you make changes to the python file.
+The first line adds the User resource class to the flask\_restful api such that it is reachable at /user/anyUserName, which the User Resource functions will use anyUserName as the name parameter in the functions, which will actually trigger the get function if it were to be accessed from a web browser. The second line runs the flask web framework on the ip address specified on the specific port. It is important to keep in mind that it cannot run on the same port as something already running. So it will not be able to run on 443 (SSL) if you already have an https server running. If debug is on, the rest api python file will adjust if you make changes to the python file.
 
 If the User Resource class had code for a get function, and if an array of names existed called users, this code would attempt to find said name, and try to return the name and 200 (HTTP Status Successful) or try to return "User not found" and 404 (HTTP Status Not Found):
 ```py
@@ -53,7 +53,7 @@ def get(self, name):
         return "User not found", 404
 ```
 
-After running this file you should be able to access the rest api at IP_ADDRESS:5000/user/anyUserName. If you switch out IP_ADDRESS with localhost, you should be able to access it at localhost:5000/user/anyUserName.
+After running this file you should be able to access the rest api at IP_ADDRESS:5000/user/anyUserName. If you switch out IP\_ADDRESS with localhost, you should be able to access it at localhost:5000/user/anyUserName.
 
 :)
 
