@@ -1,5 +1,10 @@
 posts = [
     {
+        "title": "HTTP Statuses",
+        "url": "http-statuses",
+        "date": "May 29th"
+    },
+    {
         "title": "REST Api Using Python Flask",
         "url": "rest-flask-python",
         "date": "May 29th"
