@@ -78,6 +78,8 @@ app.get("/lemur:name", (req, res) => {
 });
 ```
 
+:)
+
 [Example Code](https://github.com/klforthwind/blog-examples/blob/master/node-express/index.js "Node Express")
 
 #####Sources:
