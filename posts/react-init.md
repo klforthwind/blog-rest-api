@@ -1,4 +1,4 @@
-#Setting Up React
+#Setting Up Basic React App
 ##05/31/2019
 
 I just wanted to say, ReactJS is awesome, and it is really easy to get started. From the Facebook github page:

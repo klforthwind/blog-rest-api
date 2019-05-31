@@ -1,5 +1,10 @@
 posts = [
     {
+        "title": "Setting Up Basic React App",
+        "url": "react-init",
+        "date": "May 31th"
+    },
+    {
         "title": "Insomnia / Postman",
         "url": "insomnia-postman",
         "date": "May 31th"
