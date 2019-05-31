@@ -3,7 +3,7 @@
 
 I just wanted to say, ReactJS is awesome, and it is really easy to get started. From the Facebook github page:
 
-```sh
+```js
 npx create-react-app my-app
 cd my-app
 npm start
