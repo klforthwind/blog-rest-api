@@ -57,5 +57,7 @@ After running this file you should be able to access the rest api at IP_ADDRESS:
 
 :)
 
+[Example Code](https://github.com/klforthwind/blog-examples/blob/master/rest-flask-api/rest.py "Python Flask REST Api")
+
 #####Sources:
 ######None
