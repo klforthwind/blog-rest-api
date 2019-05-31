@@ -8,7 +8,7 @@ To create a workspace for Node, you need to make sure that you have npm.
 sudo apt-get install npm
 ```
 
-Afterwards you should be able to do
+Afterwards you should be able to run the following in the workspace folder:
 ```sh
 npm init
 ```
@@ -26,11 +26,11 @@ which will create a package.json file, looking somewhat like this:
   "license": "ISC"
 }
 ```
-Basically the most important field in this json file is `main`, since that lets npm know that  `index.js` will be requiring certain node modules. To install a node module, you need type
+Basically the most important field in this json file is main, since that lets npm know that  index.js will be requiring certain node modules. To install a node module, you need type
 ```sh
 npm install ____
 ```
-Where the underline is where the name of the node module goes, in this case it would be express. For express, in `index.js`, the first two lines of the file should be:
+Where the underline is where the name of the node module goes, in this case it would be express. For express, in index.js, the first two lines of the file should be:
 ```js
 const express = require("express");
 const app = express();
@@ -47,31 +47,31 @@ app.get("/", (request, response) => {
 ```
 This will send the message to the browser if anyone tries to reach it with a get request. Each app call has a request and a response. The response parameter is used to send data to the client, and the request parameter is used to get more information from the link.
 
-The following code can be reached at ip_address:portNumber/dragon with a POST request, not a GET request:
+The following code can be reached at ip\_address:portNumber/dragon with a POST request, not a GET request:
 ```js
 app.post("/dragon", (req, res) => {
     res.send(`You have reached the dragon`);
 });
 ```
-The following code can be reached at ip_address:portNumber/wolf with any type of HTTP request:
+The following code can be reached at ip\_address:portNumber/wolf with any type of HTTP request:
 ```js
 app.use("/wolf", (req, res) => {
     res.send(`You have reached the wolf`);
 });
 ```
-The following code can be reached at ip_address:portNumber/monkey with a GET request, but if you access ip_address:portNumber/monkey?name=ANYTHING, it will say \"This is an ANYTHING Api\":
+The following code can be reached at ip\_address:portNumber/monkey with a GET request, but if you access ip\_address:portNumber/monkey?name=ANYTHING, it will say "This is an ANYTHING Api":
 ```js
 app.get("/monkey", (req, res) => {
     res.send(`This is an ${req.query.name} Api!`);
 });
 ```
-The following code can be reached at ip_address:portNumber/cat/ANYTHING with a GET request, and it will use the ANYTHING as the name parameter. If ANYTHING is not provided, the following code will not be get, and you will need an app.get("/cat/") function:
+The following code can be reached at ip\_address:portNumber/cat/ANYTHING with a GET request, and it will use the ANYTHING as the name parameter. If ANYTHING is not provided, the following code will not be get, and you will need an app.get("/cat/") function:
 ```js
 app.get("/cat/:name", (req, res) => {
     res.send(`This is an ${req.params.name} Api!`);
 });
 ```
-The following code had a typo when wrote, but I believe is important to know. You can access the following at ip_addres:4000/lemurANYTHING, and it will print out successfully. If ANYTHING is not provided, the GET request will be unsuccessful:
+The following code had a typo when wrote, but I believe is important to know. You can access the following at ip\_addres:4000/lemurANYTHING, and it will print out successfully. If ANYTHING is not provided, the GET request will be unsuccessful:
 ```js
 app.get("/lemur:name", (req, res) => {
     res.send(`This is an ${req.params.name} Api!`);
