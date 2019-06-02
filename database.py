@@ -1,13 +1,18 @@
 posts = [
     {
+        "title": "OSI Seven Layer Model",
+        "url": "osi-model",
+        "date": "June 1st"
+    },
+    {
         "title": "Setting Up Basic React App",
         "url": "react-init",
-        "date": "May 31th"
+        "date": "May 31st"
     },
     {
         "title": "Insomnia / Postman",
         "url": "insomnia-postman",
-        "date": "May 31th"
+        "date": "May 31st"
     },
 	{
         "title": "Update On The Blog",
